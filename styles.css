@@ -53,17 +53,21 @@
 
 /* Game board cells */
 
-#cell1 {
+#cell0 {
     border-bottom: 4px solid black;
     border-right: 4px solid black;
 }
 
-#cell2 {
+#cell1 {
     border-bottom: 4px solid black;
     border-right: 4px solid black;
 }
+#cell2 {
+    border-bottom: 4px solid black;
+}
 #cell3 {
     border-bottom: 4px solid black;
+    border-right: 4px solid black;
 }
 #cell4 {
     border-bottom: 4px solid black;
@@ -71,15 +75,11 @@
 }
 #cell5 {
     border-bottom: 4px solid black;
-    border-right: 4px solid black;
 }
 #cell6 {
-    border-bottom: 4px solid black;
+    border-right: 4px solid black;
 }
 #cell7 {
     border-right: 4px solid black;
 }
-#cell8 {
-    border-right: 4px solid black;
-}
-#cell9 {}
+#cell8 {}

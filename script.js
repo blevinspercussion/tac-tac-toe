@@ -22,9 +22,9 @@ let activePlayer = playerOne;
 
 //Gameboard module
 const gameBoard = (() => {
-    let gameBoardArray = [null, null, null, 
-                          null, null, null,
-                          null, null, null]
+    let gameBoardArray = ['', '', '', 
+                          '', '', '',
+                          '', '', '']
 
     // Need function to handle player moves
     
@@ -39,6 +39,8 @@ const gameBoard = (() => {
 
                 if (cell.textContent === '') {
                     cell.textContent = activePlayer.marker;
+                    gameBoard.updateGameboardArray();
+                    console.log(gameBoard.gameBoardArray);
                     if (activePlayer === playerOne) {
                         activePlayer = playerTwo;
                     } else {
@@ -54,15 +56,27 @@ const gameBoard = (() => {
         });
     };
 
+    // Updates gameBoard array
+    const updateGameboardArray = () => {
+        for (let i = 0; i < gameBoard.gameBoardArray.length; i++) {
+            gameBoard.gameBoardArray[i] = document.getElementById('cell' + i).textContent;
+        };
+
+    };
+
+    // Checks to see if there is a winner
+    const checkWin = () => {
+    };
+
     // Export variables and functions
-    return { gameBoardArray, cellEventListeners };
+    return { gameBoardArray, cellEventListeners, checkWin, updateGameboardArray };
 })();
 
 // Controls the flow of the game
-const gameController = (() => {
+// const gameController = (() => {
 
 
-})();
+// })();
 
 
 
@@ -72,7 +86,7 @@ const displayController = (() => {
     const drawBoard = () => {
         for (let i = 0; i < 9; i++) {
             let newCell = document.createElement('div');
-            newCell.setAttribute('id', 'cell' + (i + 1));
+            newCell.setAttribute('id', 'cell' + i);
             newCell.classList.add('cell');
             playArea.appendChild(newCell);
             
