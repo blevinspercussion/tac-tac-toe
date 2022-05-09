@@ -61,7 +61,12 @@ const gameBoard = (() => {
 
     // Checks to see if there is a winner
     const checkWin = () => {
-
+        if (gameBoard.gameBoardArray[0] != '') {
+            if (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[1] && gameBoard.gameBoardArray[2]) {
+                console.log(`Player ${activePlayer.playerNo} wins!`);
+            }
+        }
+        
     };
 
     // Export variables and functions
