@@ -1,0 +1,27 @@
+.main-container {
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows:  1fr 5fr;
+}
+
+.header {
+    align-self: center;
+    justify-self: center;
+}
+
+.title {
+    align-self: center;
+    justify-self: center;
+    border-bottom: 2px solid black;
+}
+
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid black;
+}
+
+.title-menu {
+
+}
