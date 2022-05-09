@@ -2,13 +2,22 @@
 const mainContent = document.querySelector('.main-content');
 const playArea = document.querySelector('.play-area');
 
-
 // Player factory
 const player = (marker, playerNo) => {
 
 
     return {marker, playerNo};
 };
+// Global variables
+
+// Create Players 
+let playerOne = player('X', 'One');
+let playerTwo = player('O', 'Two');
+
+let activePlayer = playerOne;
+
+
+
 
 
 //Gameboard module
@@ -18,6 +27,7 @@ const gameBoard = (() => {
                           null, null, null]
 
     // Need function to handle player moves
+    
 
 
     // Need function to create event listeners
@@ -26,20 +36,32 @@ const gameBoard = (() => {
         let cells = document.querySelectorAll('.cell');
         cells.forEach(cell => {
             cell.addEventListener('click', () => {
-                cell.textContent = 'X';
+
+                if (cell.textContent === '') {
+                    cell.textContent = activePlayer.marker;
+                    if (activePlayer === playerOne) {
+                        activePlayer = playerTwo;
+                    } else {
+                        activePlayer = playerOne;
+                };
+
+                };
+
+
+
+                
             });
         });
     };
 
-    // let cells = document.querySelectorAll('.cell');
-    // cells.forEach(cell => {
-    //     cell.addEventListener('click', () => {
-    //         cell.textContent = 'X';
-    //     });
-    // });
-
     // Export variables and functions
     return { gameBoardArray, cellEventListeners };
+})();
+
+// Controls the flow of the game
+const gameController = (() => {
+
+
 })();
 
 
@@ -53,6 +75,7 @@ const displayController = (() => {
             newCell.setAttribute('id', 'cell' + (i + 1));
             newCell.classList.add('cell');
             playArea.appendChild(newCell);
+            
         };
     };
 
