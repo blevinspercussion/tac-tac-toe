@@ -28,7 +28,58 @@
     background-color: rgb(162, 162, 162);
 }
 
+.main-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    grid-column: 2 / 3;
+    grid-row: 2 / 3
+}
+
+.play-area {
+    display: grid;
+    grid-template-columns: 200px 200px 200px;
+    grid-template-rows: 200px 200px 200px;
+}
+
+.cell {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 150px;
+}
+
 
 
 /* Game board cells */
 
+#cell1 {
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+}
+
+#cell2 {
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+}
+#cell3 {
+    border-bottom: 4px solid black;
+}
+#cell4 {
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+}
+#cell5 {
+    border-bottom: 4px solid black;
+    border-right: 4px solid black;
+}
+#cell6 {
+    border-bottom: 4px solid black;
+}
+#cell7 {
+    border-right: 4px solid black;
+}
+#cell8 {
+    border-right: 4px solid black;
+}
+#cell9 {}

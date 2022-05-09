@@ -20,9 +20,27 @@ const gameBoard = (() => {
     // Need function to handle player moves
 
 
+    // Need function to create event listeners
+
+    const cellEventListeners = () => {
+        let cells = document.querySelectorAll('.cell');
+        cells.forEach(cell => {
+            cell.addEventListener('click', () => {
+                cell.textContent = 'X';
+            });
+        });
+    };
+
+    // let cells = document.querySelectorAll('.cell');
+    // cells.forEach(cell => {
+    //     cell.addEventListener('click', () => {
+    //         cell.textContent = 'X';
+    //     });
+    // });
+
     // Export variables and functions
-    return { gameBoardArray };
-});
+    return { gameBoardArray, cellEventListeners };
+})();
 
 
 
@@ -31,8 +49,9 @@ const displayController = (() => {
     // function to draw the board
     const drawBoard = () => {
         for (let i = 0; i < 9; i++) {
-            newCell = document.createElement('div');
+            let newCell = document.createElement('div');
             newCell.setAttribute('id', 'cell' + (i + 1));
+            newCell.classList.add('cell');
             playArea.appendChild(newCell);
         };
     };
@@ -55,3 +74,4 @@ const displayController = (() => {
 // Execute the game
 
 displayController.drawBoard();
+gameBoard.cellEventListeners();
