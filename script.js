@@ -14,6 +14,8 @@ const player = (marker, playerNo) => {
 let playerOne = player('X', 'One');
 let playerTwo = player('O', 'Two');
 
+let winner;
+
 let activePlayer = playerOne;
 
 
@@ -26,10 +28,6 @@ const gameBoard = (() => {
                           '', '', '',
                           '', '', '']
 
-    // Need function to handle player moves
-    
-
-
     // Need function to create event listeners
 
     const cellEventListeners = () => {
@@ -41,17 +39,14 @@ const gameBoard = (() => {
                     cell.textContent = activePlayer.marker;
                     gameBoard.updateGameboardArray();
                     console.log(gameBoard.gameBoardArray);
+                    gameBoard.checkWin();
                     if (activePlayer === playerOne) {
                         activePlayer = playerTwo;
                     } else {
                         activePlayer = playerOne;
                 };
 
-                };
-
-
-
-                
+                };              
             });
         });
     };
@@ -66,6 +61,7 @@ const gameBoard = (() => {
 
     // Checks to see if there is a winner
     const checkWin = () => {
+
     };
 
     // Export variables and functions
