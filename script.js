@@ -62,9 +62,12 @@ const gameBoard = (() => {
     // Checks to see if there is a winner
     const checkWin = () => {
         if (gameBoard.gameBoardArray[0] != '') {
-            if (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[1] && gameBoard.gameBoardArray[2]) {
+            if ((gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[1] && gameBoard.gameBoardArray[2]) ||
+                (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[8]) ||
+                (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[3] && gameBoard.gameBoardArray[6])) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
-            }
+            };
+            
         }
         
     };
