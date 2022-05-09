@@ -25,7 +25,9 @@ const gameBoard = (() => {
 const displayController = (() => {
     // function to draw the board
     const drawBoard = () => {
+        for (cell in gameBoardArray) {
 
+        }
     }
 
     // Need function to update the board after player move
@@ -38,3 +40,8 @@ const displayController = (() => {
 ///////////////////////////////////
 //// Event handlers
 ///////////////////////////////////
+
+
+
+
+// Execute the game

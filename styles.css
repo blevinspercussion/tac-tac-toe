@@ -2,9 +2,12 @@
     display: grid;
     grid-template-columns: 1fr 5fr;
     grid-template-rows:  1fr 5fr;
+    background-color: rgb(134, 134, 211);
 }
 
 .header {
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
     align-self: center;
     justify-self: center;
 }
@@ -16,12 +19,16 @@
 }
 
 .sidebar {
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
     display: flex;
     flex-direction: column;
     align-items: center;
     border: 2px solid black;
+    background-color: rgb(162, 162, 162);
 }
 
-.title-menu {
 
-}
+
+/* Game board cells */
+
