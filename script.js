@@ -69,6 +69,7 @@ const gameBoard = (() => {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 newGameButton.disabled = false;
                 displayController.destroyGameBoard();
+                displayController.gameWon();
             };
         }; 
         
@@ -78,6 +79,7 @@ const gameBoard = (() => {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 newGameButton.disabled = false;
                 displayController.destroyGameBoard();
+                displayController.gameWon();
             };
             
         };
@@ -88,6 +90,7 @@ const gameBoard = (() => {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 newGameButton.disabled = false;
                 displayController.destroyGameBoard();
+                displayController.gameWon();
             };
             
         };
@@ -97,6 +100,7 @@ const gameBoard = (() => {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 newGameButton.disabled = false;
                 displayController.destroyGameBoard();
+                displayController.gameWon();
             };
             
         };
@@ -105,6 +109,7 @@ const gameBoard = (() => {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 newGameButton.disabled = false;
                 displayController.destroyGameBoard();
+                displayController.gameWon();
             };
         };
         
@@ -143,9 +148,19 @@ const displayController = (() => {
         gameBoard.gameBoardArray = ['', '', '', '', '', '', '', '', '']
     };
 
+    const gameWon = () => {
+        winner = activePlayer;
+        let winnerTextDiv = document.createElement('div');
+        winnerTextDiv.classList.add('winner-text');
+        let winnerText = `Player ${activePlayer.playerNo} Wins!`;
+        playArea.appendChild(winnerTextDiv);
+        winnerTextDiv.textContent = winnerText;
+
+    };
+
 
     // Export variables and functions
-    return { drawBoard, destroyGameBoard };
+    return { drawBoard, destroyGameBoard, gameWon };
 })();
 
 
@@ -155,8 +170,11 @@ const displayController = (() => {
 ///////////////////////////////////
 
 newGameButton.addEventListener('click', () => {
+    if (document.querySelector('winner-text')) {
+        winnerTextDiv.textContent = '';
+    };
     displayController.drawBoard();
     newGameButton.setAttribute('disabled', 'true');
     gameBoard.cellEventListeners();
-})
+});
 

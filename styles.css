@@ -59,6 +59,9 @@ button {
     border-radius: 10px;
 }
 
+.winner-text {
+    font-size: 150px;
+}
 
 /* Game board cells */
 
