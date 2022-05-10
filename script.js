@@ -1,6 +1,7 @@
 // DOM elements
 const mainContent = document.querySelector('.main-content');
 const playArea = document.querySelector('.play-area');
+const newGameButton = document.querySelector('.new-game-button');
 
 // Player factory
 const player = (marker, playerNo) => {
@@ -139,7 +140,7 @@ const displayController = (() => {
         cells.forEach(cell => {
             cell.remove();
         });
-
+        gameBoard.gameBoardArray = ['', '', '', '', '', '', '', '', '']
     };
 
 
@@ -153,10 +154,13 @@ const displayController = (() => {
 //// Event handlers
 ///////////////////////////////////
 
-
+newGameButton.addEventListener('click', () => {
+    displayController.drawBoard();
+    gameBoard.cellEventListeners();
+})
 
 
 // Execute the game
 
-displayController.drawBoard();
-gameBoard.cellEventListeners();
+// displayController.drawBoard();
+// gameBoard.cellEventListeners();
