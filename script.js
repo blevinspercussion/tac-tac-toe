@@ -66,9 +66,28 @@ const gameBoard = (() => {
                 (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[8]) ||
                 (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[3] && gameBoard.gameBoardArray[6])) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
+            }
+        } else if (gameBoard.gameBoardArray[3] != '') {
+            if (gameBoard.gameBoardArray[3] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[5]) {
+                console.log(`Player ${activePlayer.playerNo} wins!`);
             };
             
-        }
+        } else if (gameBoard.gameBoardArray[1] != '') {
+            if (gameBoard.gameBoardArray[1] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[7]) {
+                console.log(`Player ${activePlayer.playerNo} wins!`);
+            };
+
+        } else if (gameBoard.gameBoardArray[2] != '') {
+            if ((gameBoard.gameBoardArray[2] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[6]) || 
+                (gameBoard.gameBoardArray[2] === gameBoard.gameBoardArray[5] && gameBoard.gameBoardArray[8])) {
+                    console.log(`Player ${activePlayer.playerNo} wins!`);
+                };
+            
+        } else if (gameBoard.gameBoardArray[6] != '') {
+            if (gameBoard.gameBoardArray[6] === gameBoard.gameBoardArray[7] && gameBoard.gameBoardArray[8]) {
+                console.log(`Player ${activePlayer.playerNo} wins!`);
+            };
+        };
         
     };
 
