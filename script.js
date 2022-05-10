@@ -156,11 +156,7 @@ const displayController = (() => {
 
 newGameButton.addEventListener('click', () => {
     displayController.drawBoard();
+    newGameButton.setAttribute('disabled', 'true');
     gameBoard.cellEventListeners();
 })
 
-
-// Execute the game
-
-// displayController.drawBoard();
-// gameBoard.cellEventListeners();
