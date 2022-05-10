@@ -67,7 +67,8 @@ const gameBoard = (() => {
                 (gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[3] && gameBoard.gameBoardArray[0] === gameBoard.gameBoardArray[6])) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 console.log('0');
-            }
+                displayController.destroyGameBoard();
+            };
         }; 
         
         
@@ -75,6 +76,7 @@ const gameBoard = (() => {
             if (gameBoard.gameBoardArray[1] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[1] === gameBoard.gameBoardArray[7]) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 console.log('1');
+                displayController.destroyGameBoard();
             };
             
         };
@@ -84,6 +86,7 @@ const gameBoard = (() => {
                 (gameBoard.gameBoardArray[2] === gameBoard.gameBoardArray[5] && gameBoard.gameBoardArray[2] === gameBoard.gameBoardArray[8])) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 console.log('2');
+                displayController.destroyGameBoard();
             };
             
         };
@@ -92,6 +95,7 @@ const gameBoard = (() => {
             if (gameBoard.gameBoardArray[3] === gameBoard.gameBoardArray[4] && gameBoard.gameBoardArray[3] === gameBoard.gameBoardArray[5]) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 console.log(3);
+                displayController.destroyGameBoard();
             };
             
         };
@@ -99,6 +103,7 @@ const gameBoard = (() => {
             if (gameBoard.gameBoardArray[6] === gameBoard.gameBoardArray[7] && gameBoard.gameBoardArray[6] === gameBoard.gameBoardArray[8]) {
                 console.log(`Player ${activePlayer.playerNo} wins!`);
                 console.log('6');
+                displayController.destroyGameBoard();
             };
         };
         
@@ -129,10 +134,17 @@ const displayController = (() => {
         };
     };
 
-    // Need function to update the board after player move
+    const destroyGameBoard = () => {
+        cells = document.querySelectorAll('.cell');
+        cells.forEach(cell => {
+            cell.remove();
+        });
+
+    };
+
 
     // Export variables and functions
-    return { drawBoard };
+    return { drawBoard, destroyGameBoard };
 })();
 
 
