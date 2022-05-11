@@ -129,6 +129,10 @@ const gameBoard = (() => {
 
 //Display controller module
 const displayController = (() => {
+
+    let winnerTextDiv = document.createElement('div');
+        winnerTextDiv.classList.add('winner-text');
+
     // function to draw the board
     const drawBoard = () => {
         for (let i = 0; i < 9; i++) {
@@ -150,8 +154,7 @@ const displayController = (() => {
 
     const gameWon = () => {
         winner = activePlayer;
-        let winnerTextDiv = document.createElement('div');
-        winnerTextDiv.classList.add('winner-text');
+
         let winnerText = `Player ${activePlayer.playerNo} Wins!`;
         playArea.appendChild(winnerTextDiv);
         winnerTextDiv.textContent = winnerText;
@@ -160,7 +163,7 @@ const displayController = (() => {
 
 
     // Export variables and functions
-    return { drawBoard, destroyGameBoard, gameWon };
+    return { drawBoard, destroyGameBoard, gameWon, winnerTextDiv };
 })();
 
 
@@ -170,9 +173,7 @@ const displayController = (() => {
 ///////////////////////////////////
 
 newGameButton.addEventListener('click', () => {
-    if (document.querySelector('winner-text')) {
-        winnerTextDiv.textContent = '';
-    };
+    displayController.winnerTextDiv.remove();
     displayController.drawBoard();
     newGameButton.setAttribute('disabled', 'true');
     gameBoard.cellEventListeners();
